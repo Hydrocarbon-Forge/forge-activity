@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>SLOPWORKS — The AI Slop Factory</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand-wrapper">
+        <h1 class="brand-title">SLOPWORKS</h1>
+        <span class="brand-sub">THE AI SLOP FACTORY 🧠</span>
+      </div>
+
+      <div class="header-right">
+        <span id="instance-badge" class="badge badge-instance">INSTANCE: devtest</span>
+        <span id="mode-badge" class="badge badge-mode">GUEST MODE</span>
+
+        <div id="user-chip" class="user-chip">
+          <img id="my-avatar" class="user-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+          <span id="my-username" class="user-name">Loading...</span>
+        </div>
+
+        <button id="mute-btn" class="btn-icon" title="Toggle Sound">🔊</button>
+      </div>
+    </header>
+
+    <!-- Live Random Event Banner -->
+    <div id="event-banner" class="event-banner hidden">
+      <span id="event-title">🚀 EVENT ACTIVE</span>
+      <span id="event-desc">Production multiplied!</span>
+      <span id="event-timer" class="event-timer">10s</span>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <main class="main-container">
+      <!-- Left: Upgrades Store -->
+      <section class="panel upgrades-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">⚡ UPGRADES</h2>
+          <span id="upgrades-summary" class="badge">0 OWNED</span>
+        </div>
+        <div id="upgrades-list" class="upgrades-list">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Center: Clicker Forge -->
+      <section class="panel center-panel">
+        <div class="slop-score-box">
+          <div id="slop-counter" class="slop-counter">0</div>
+          <div class="slop-unit">Units of Synthetic Slop</div>
+
+          <div class="slop-stats-bar">
+            <div class="stat-item">RATE: <span id="stat-cps" class="stat-val">0.0</span>/s</div>
+            <div class="stat-item">CLICK: <span id="stat-click" class="stat-val">+1</span></div>
+            <div class="stat-item">MULT: <span id="stat-mult" class="stat-val">1.0x</span></div>
+          </div>
+        </div>
+
+        <div class="slop-button-container">
+          <button id="slop-btn" class="blob-btn" aria-label="Generate Slop">
+            <span class="blob-text">SLOP</span>
+            <span class="blob-sub">CLICK TO INVENT</span>
+          </button>
+        </div>
+
+        <!-- Race to 10k Progress Bar -->
+        <div class="win-progress-box">
+          <div class="progress-label">
+            <span>RACE TO 10,000 SLOP 🏁</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Leaderboard & Feed -->
+      <div class="right-panel">
+        <!-- Live Leaderboard -->
+        <section class="panel leaderboard-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">👑 LEADERBOARD</h2>
+            <span id="participant-count" class="badge">1 ONLINE</span>
+          </div>
+          <div id="leaderboard-list" class="leaderboard-list">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+
+        <!-- Live Output Tape Feed -->
+        <section class="panel tape-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">📜 OUTPUT TAPE FEED</h2>
+            <span class="badge" style="color: var(--neon-pink);">ABSURD STREAM</span>
+          </div>
+          <div id="tape-feed" class="tape-feed">
+            <!-- Populated by JS -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- AI Sycophant Floating Toast -->
+    <div id="ai-toast" class="ai-toast hidden">
+      <span>💡</span>
+      <span id="ai-toast-text">AI: I'm so happy you asked! Producing more slop immediately.</span>
+    </div>
+
+    <!-- Win / Rematch Modal -->
+    <div id="win-modal" class="modal-overlay hidden">
+      <div class="win-modal">
+        <h2 class="win-title">🎉 ROUND WON!</h2>
+        <img id="winner-avatar" class="winner-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Winner" />
+        <div id="winner-name" class="winner-name">Winner</div>
+        <p class="winner-desc">has achieved maximum synthetic enlightenment by reaching 10,000 Slop!</p>
+        <button id="btn-rematch" class="btn-rematch">REMATCH / PLAY AGAIN 🔄</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
