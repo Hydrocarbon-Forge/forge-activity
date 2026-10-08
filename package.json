@@ -1,0 +1,12 @@
+{
+  "name": "slopworks-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SLOPWORKS — Discord Activity multiplayer party game",
+  "scripts": {
+    "build:client": "npm --prefix game/client run build",
+    "install:all": "npm --prefix game/client install && npm --prefix game/server install",
+    "start": "npm --prefix game/server start",
+    "test": "npm --prefix game/server test"
+  }
+}
