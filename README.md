@@ -1,3 +1,11 @@
+<p align="center"><b>A multiplayer Discord Activity party game about making absurd AI slop together.</b></p>
+
+<p align="center">
+<a href="LICENSE"><img alt="license: MIT" src="https://img.shields.io/badge/license-MIT-blue"></a>
+</p>
+
+---
+
 # 🧠 SLOPWORKS — Discord Activity (Multiplayer Web App)
 
 SLOPWORKS is a multiplayer Discord Activity party game about producing absurd, garbled "AI slop" together in a Discord voice channel.
